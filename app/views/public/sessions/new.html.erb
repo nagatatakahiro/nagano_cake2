@@ -1,0 +1,21 @@
+<h2>ログイン</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field mt-3">
+      <%= f.label :email, "メールアドレス", style:"font-weight:bold" %><br />
+      <%= f.text_field :email %>
+  </div>
+
+  <div class="field mt-3">
+      <%= f.label :password, "パスワード(6文字以上)", style:"font-weight:bold" %><br />
+      <%= f.password_field :password %>
+　</div>
+
+
+
+  <div class="actions">
+    <%= f.submit "ログイン" %>
+  </div>
+<% end %>
+
+<%= render "public/shared/links" %>
