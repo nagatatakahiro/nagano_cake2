@@ -32,7 +32,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-　　　t.string :last_name
+      t.string :last_name
       t.string :first_name
       t.string :last_name_kana
       t.string :first_name_kana
@@ -40,7 +40,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :telephone_number
       t.boolean :is_deleted, null: false, default: 0
-      t.timestamps null: false
+      t.timestamps
     end
 
     add_index :customers, :email,                unique: true
