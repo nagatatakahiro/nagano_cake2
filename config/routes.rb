@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  scope module: :public do
+    get 'customers/current_customer' => "customers#show"
+    get 'customers/current_customer/edit' => "customers#edit"
+  end
   root to: 'homes#top'
   get '/about' => "homes#about"
   namespace :admin do
