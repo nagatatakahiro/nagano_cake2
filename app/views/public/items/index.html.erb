@@ -1,0 +1,14 @@
+<h1>商品一覧</h1>
+<table class="table table-striped bg-light">
+<tr>
+  <th>商品画像</th>
+  <th>商品名</th>
+  <th>商品単価</th>
+</tr>
+<% @items.each do |item| %>
+  <tr>
+    <td><%= link_to item.image, item_path(item) %></td>
+    <td><%= item.name %>
+    <td><%= item.price %></td>
+  </tr>
+<% end %>

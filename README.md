@@ -118,3 +118,7 @@ namespace :admin do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
+
+get 'items' => "items#index"
+    get 'items/:id' => "items#show"
