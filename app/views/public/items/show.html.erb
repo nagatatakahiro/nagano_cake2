@@ -2,14 +2,20 @@
 
 <div>
   <div class="col-6">
-    <%= image_tag @item, :image, format: 'jpeg', fallback: "ithigo.jpg", style: "max-width: 100%"%>
+    <%= image_tag @item.image %>
   </div>
   <div>
     <div class="item-description mb-5">
       <%= @item.introduction %>
     </div>
     <div>
-      <%= @item.price %>円
-    <>
+      ￥<%= @item.price %>(税込)
+    </div>
+    <%= form_with model: @item, url: items_path do |f| %>
+      <%= f.hidden_field :item_id, :value => @item.id %>
+      <%= f.select :amount, *[1..10],  {include_blank: '個数選択'}%>
+      <%= f.submit '保存', class: "btn btn-primary" %>
+    <% end %>
+
   </div>
 </div>
