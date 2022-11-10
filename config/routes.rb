@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     get 'customers/current_customer/edit' => "customers#edit"
     get 'customers/confirm' => "customers#confirm", as: 'confirm'
     patch 'customers/out' => 'customers#out', as: 'out'
+    resources :cart_items, only: [:index,:update,:create,:destroy]do
+      collection do
+        delete 'destroy_all'
+      end
+    end
   end
   root to: 'homes#top'
   get '/about' => "homes#about"
