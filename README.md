@@ -122,3 +122,6 @@ end
 
 get 'items' => "items#index"
     get 'items/:id' => "items#show"
+
+
+    <td><%= (cart_item.item.price * 1.1).floor * cart_item.amount %></td>
