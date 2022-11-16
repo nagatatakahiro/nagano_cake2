@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
 
+
   scope module: :public do
     resources :items, only: [:index, :show]
+    resources :orders, only: [:new, :create, :index, :show]
+    post "orders/confirm"
+    get "orders/complete"
     get 'customers/current_customer' => "customers#show"
     get 'customers/current_customer/edit' => "customers#edit"
     get 'customers/confirm' => "customers#confirm", as: 'confirm'
