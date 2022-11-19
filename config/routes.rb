@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
 
 
+
   scope module: :public do
     resources :items, only: [:index, :show]
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
     resources :orders, only: [:new, :create, :index, :show]
     post "orders/confirm"
     get "orders/complete"
