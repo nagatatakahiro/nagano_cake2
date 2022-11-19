@@ -1,5 +1,5 @@
 class Public::OrdersController < ApplicationController
-  POSTAGE = 1000
+  POSTAGE = 800
 
   def new
     @order = Order.new

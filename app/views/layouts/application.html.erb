@@ -15,7 +15,15 @@
     <ul class="navbar-nav nav justify-content-end mr-sm-2">
         <% if customer_signed_in? %>
 
-
+          <li class="nav-item">
+            <%= link_to "マイページ", customers_current_customer_path, class: "nav-link fas fa-cookie" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "商品一覧", items_path, class: "nav-link fas fa-cookie" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "カート", cart_items_path, class: "nav-link fas fa-cookie" %>
+          </li>
           <li class="nav-item">
             <%= link_to "ログアウト", destroy_customer_session_path(current_customer), method: :delete, class: "nav-link fas fa-sign-out-alt" %>
           </li>
@@ -33,10 +41,17 @@
 
         <% else %>
           <li class="nav-item">
-            <%= link_to "ログイン", new_customer_session_path, class: "nav-link fas fa-sign-in-alt" %>
+            <%= link_to "About", about_path, class: "nav-link fas fa-sign-in-alt" %>
           </li>
           <li class="nav-item">
+            <%= link_to "商品一覧", items_path, class: "nav-link fas fa-sign-in-alt" %>
+          </li>
+
+          <li class="nav-item">
             <%= link_to "新規登録", new_customer_registration_path, class: "nav-link fas fa-user-plus" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン", new_customer_session_path, class: "nav-link fas fa-sign-in-alt" %>
           </li>
         <% end %>
       </ul>
