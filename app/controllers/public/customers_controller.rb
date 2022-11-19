@@ -11,6 +11,8 @@ class Public::CustomersController < ApplicationController
     Customer.update(customer_params)
     redirect_to admin_customer_path(customer)
   end
+  def confirm
+  end
   def out
     @customer = Customer.find(params[:id])
     # is_deletedカラムをtrueに変更することにより削除フラグを立てる
