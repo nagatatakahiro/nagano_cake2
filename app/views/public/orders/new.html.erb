@@ -1,2 +1,9 @@
 <h1>注文情報入力</h1>
 <%= form_with model: @order, url: orders_path do |f| %>
+<div class="form-group">
+    <div class="lead mb-2">支払い方法</div>
+    <%= f.radio_button :payment_method, "credit_card" %>
+    <%= f.label :payment_method, "クレジットカード" %>　　
+    <%= f.radio_button :payment_method, "transfer" %>
+    <%= f.label :payment_method, "銀行振込" %>
+    </div>
