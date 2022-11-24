@@ -31,5 +31,5 @@
 </table>
 <div class="border-top mt-3 pt-2 mb-1">支払方法<p><%= Order.payment_methods_i18n[@order.payment_method] %></p></div>
 
-<div class="border-top mt-3 pt-2 mb-1">お届け先<p><%= @address.address_display %></p></div>
+<div class="border-top mt-3 pt-2 mb-1">お届け先<p><%= params[:order][:address_select] %></p></div>
 <%= link_to "購入確定", orders_complete_path, class: "btn btn-primary mt-3" %>
