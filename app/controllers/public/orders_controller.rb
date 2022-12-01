@@ -16,9 +16,9 @@ class Public::OrdersController < ApplicationController
      @order.address = @address.address
      @order.name = @address.name
     else
-     @order.postal_code = params[:postal_code]
-     @order.address = params[:address]
-     @order.name = params[:name]
+     @order.postal_code = params[:order][:postal_code]
+     @order.address = params[:order][:address]
+     @order.name = params[:order][:name]
     end
     @cart_items = current_customer.cart_items
     @total = 0
